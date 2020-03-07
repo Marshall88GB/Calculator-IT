@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+        }
+        
+        #Number-a, #Number-b , #operate,#total,#Rezultat {
+            margin: 5px auto;
+            padding: 10px;
+            font-size: 20px;
+
+        }
+        #operate,
+        #total
+        {
+            width: 200px;
+        }
+        #total {
+            color: white;
+            background-color: rgb(255, 0, 0);
+        }
+        .container {
+            height: 200px;
+            border: 2px solid rgb(26, 25, 25);
+            text-align: center;
+        }
+        #Rezultat {
+            font-size: 150px;
+           
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form>
+            <fieldset>
+                <input id="Number-a" type="number">
+                <label for="Number-a">Unesite broj</label>
+            </fieldset>
+            <fieldset>
+                <input id="Number-b" type="number">
+                <label for="Number-b">Unesite broj</label>
+            </fieldset>
+
+            <fieldset>
+                <select name="operation" id="operate">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="x">x</option>
+                    <option value="/">/</option>
+                    
+                </select>
+                <label for="operate">Izaberite operaciju</label>
+                
+            </fieldset>
+            <fieldset>
+                <button type="button" id="total" value="=" onclick= "myFunction();">Izracunaj</button>
+            </fieldset>
+        </form>
+        <div class="container">
+            <p id="Rezultat"></p>
+        </div>
+    </div>
+    <script>
+
+        function myFunction() {
+
+            var a = parseFloat(document.getElementById("Number-a").value)
+            var b = parseFloat(document.getElementById("Number-b").value)
+
+            var oper = document.getElementById("operate").value
+
+            if ( oper=== "+" ) {
+                 document.getElementById("Rezultat").innerHTML = a + b;  }
+                  else if ( oper=== "-" ) {
+                 document.getElementById("Rezultat").innerHTML = a - b;  }
+                 else if ( oper=== "x" ) {
+                 document.getElementById("Rezultat").innerHTML = a * b; }
+                 else if ( oper=== "/" ) {
+                 document.getElementById("Rezultat").innerHTML = a / b;  }
+                 else {
+                    document.getElementById("Rezultat").innerHTML = "Nepoznata vrednost" ;
+                 }
+        }
+    </script>
+</body>
+
+</html>
